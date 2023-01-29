@@ -2,6 +2,7 @@
 from pytest_bdd import scenario, given, then, when, parsers
 
 from tests.models.board import Board
+from tests.models.indicator_monets import Indicator
 
 
 @scenario('merge.feature', 'Simple merge')
@@ -56,3 +57,10 @@ def merge_house(result_board, game_board, user_queue, change_board):
     assert board.get_board() == new_board
     board.merge_houses(game_board.get("initial_board"), result_board)
     assert board.get_board() == result_board
+
+
+@then("User should see point increase 6")
+def increase_point():
+    indicator = Indicator()
+    indicator.increase(6)
+    assert indicator.get_money() == 6
