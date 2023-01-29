@@ -1,4 +1,4 @@
-# content of test_stop_game.py
+# content of test_merge_1.py
 from pytest_bdd import scenario, given, then, when, parsers
 
 from tests.models.board import Board
