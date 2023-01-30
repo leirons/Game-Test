@@ -8,7 +8,7 @@ from tests.models.pause import Pause
 
 
 @scenario('economic.feature', 'Getting n+1 coins for using crystal')
-def test_coins_1():
+def test_coins_4():
     pass
 
 

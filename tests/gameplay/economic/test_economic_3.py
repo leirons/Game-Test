@@ -8,7 +8,7 @@ from random import randrange
 
 
 @scenario('economic.feature', 'Getting n*x coins for merging x houses of n lvl')
-def test_coins_1():
+def test_coins_3():
     pass
 
 

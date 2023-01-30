@@ -12,7 +12,7 @@ with open("combo_merge.json") as file:
 
 
 @scenario('economic.feature', 'Getting ( (x1*n1) + (x2*n2)+ ... +(хN*nN) ) * N coins for combo-merge')
-def test_coins_1():
+def test_coins_5():
     pass
 
 
