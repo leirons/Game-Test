@@ -21,11 +21,17 @@ def game_in_progress():
     return {"game_progress": True}
 
 
-@when("User puts the house of random lvl on cell", target_fixture="user_house")
-def user_houses():
+@given("Random numbers of houses on the game table", target_fixture="game_table")
+def game_table():
     board = Board()
     board.create_custom_board([0, 0, 0, 0])
     board = board.get_board()
+    return board
+
+
+@when("User puts the house of random lvl on cell", target_fixture="user_house")
+def user_houses(game_table):
+    board = game_table
     house = (randrange(1, 10))
     board[0] = house
     return house

@@ -19,8 +19,13 @@ def game_in_progress():
     return {"game_progress": True}
 
 
+@given("Random numbers of houses on the game table", target_fixture="game_table")
+def game_table():
+    return "board"
+
+
 @when("User merges x houses of n lvl", target_fixture="user_houses")
-def user_houses():
+def user_houses(game_table):
     houses = randrange(3, 9)
     lvl = randrange(1, 10)
     return [houses, lvl]

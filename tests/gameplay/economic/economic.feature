@@ -4,6 +4,7 @@ Feature: Economic
 
   Background:
     Given The game is in progress
+    Given Random numbers of houses on the game table
 
   @positive
   Scenario: Getting n coins for placing a house

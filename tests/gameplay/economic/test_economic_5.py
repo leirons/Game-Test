@@ -3,6 +3,8 @@
 
 import json
 from pytest_bdd import scenario, given, then, when
+
+from models.board import Board
 from tests.models.indicator import Indicator
 from tests.models.pause import Pause
 
@@ -22,9 +24,13 @@ def game_in_progress():
     assert pause.active_pause == True
     return {"game_progress": True}
 
+@given("Random numbers of houses on the game table", target_fixture="game_table")
+def game_table():
+    return "board"
 
 @when("User merges multiple x houses of multiple n lvl", target_fixture="user_houses")
-def merge_houses():
+def merge_houses(game_table):
+    board = game_table
     houses = json_data.get('data')
     result = json_data.get('result')
 

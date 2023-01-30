@@ -2,7 +2,7 @@
 # content of test_economic_4.py
 
 from pytest_bdd import scenario, given, then, when
-from models.board import Board
+from tests.models.board import Board
 from tests.models.indicator import Indicator
 from tests.models.pause import Pause
 
@@ -23,13 +23,17 @@ def game_in_progress():
 def crystal():
     return {'crystal': True}
 
-
-@when("User use crystal on a house", target_fixture="user_houses")
-def user_houses(crystal):
-    assert crystal.get('crystal') is True
-
+@given("Random numbers of houses on the game table", target_fixture="game_table")
+def game_table():
     board = Board()
     board.create_custom_board([0, 3, 0, 0])
+    return board
+
+
+@when("User use crystal on a house", target_fixture="user_houses")
+def user_houses(crystal,game_table):
+    assert crystal.get('crystal') is True
+    board = game_table
     coordinate = 1
     result = board.use_crystal(coordinate)
     assert result is True

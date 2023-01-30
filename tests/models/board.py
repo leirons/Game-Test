@@ -1,5 +1,4 @@
-from random import randrange
-from models.house import Houses
+from gameplay.models.house import Houses
 
 
 class Board:
