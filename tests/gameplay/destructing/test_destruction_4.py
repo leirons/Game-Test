@@ -43,14 +43,13 @@ def cancel_destruction(destroy_process):
     return {"process": True}
 
 
-@when("User presses on the button to stop the destruction",target_fixture="user_press")
+@when("User presses on the button to stop the destruction", target_fixture="user_press")
 def user_press(cancel_destruction):
     process = False
-    return {"process":process}
+    return {"process": process}
+
 
 @then("The state of choosing a house to destroy disappears")
 def changed_state(user_press):
     process = user_press.get('process')
     assert process is False
-
-
