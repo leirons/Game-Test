@@ -30,8 +30,13 @@ class Board:
     def create_custom_board(self, board):
         self.board = board
 
+    def use_crystal(self,coordinates=None):
+        if coordinates:
+            return True
+        return False
+
     def merge_houses(self, houses, expected_result):
         if houses:
             self.board = expected_result
-            return None,True
+            return None, True
         return expected_result, False
