@@ -5,7 +5,6 @@ Feature: Economic
   Background:
     Given The game is in progress
 
-
   @positive
   Scenario: Getting n coins for placing a house
     When User puts the house of random lvl on cell
