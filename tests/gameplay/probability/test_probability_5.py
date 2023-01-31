@@ -7,7 +7,7 @@ import yaml
 from pytest_bdd import scenario, given, then, when, parsers
 
 
-@scenario('probability.feature', 'Level 5 probability Test')
+@scenario('probability.feature', 'Level 5 probability test')
 def test_probability_5():
     pass
 
