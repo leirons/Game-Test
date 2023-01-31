@@ -41,6 +41,7 @@ def user_place():
 def check_probability(probability_chances):
     probabilities = probability_chances.get('probabilities')
     chances = probabilities.get(8)
-    houses = [i for i in range(len(chances))]
+    houses = [i for i in range(1,len(chances)+1)]
     result = random.choices(houses, weights=chances, k=1)[0]
+
     assert result in houses
