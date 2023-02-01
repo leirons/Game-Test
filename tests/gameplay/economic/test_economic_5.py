@@ -43,3 +43,8 @@ def get_coins(user_houses):
     indicator = Indicator()
     coins_result = indicator.combo_merged_houses(houses)
     assert coins_result == result
+
+
+@when("User presses on the button to stop the destruction")
+def step_impl():
+    raise NotImplementedError(u'STEP: When User presses on the button to stop the destruction')

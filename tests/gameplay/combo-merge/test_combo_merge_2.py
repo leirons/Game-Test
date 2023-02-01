@@ -64,7 +64,7 @@ def user_place(file, game_board, spawn_queue):
 
 
 @then(parsers.cfparse(
-    'From house {initial_house:Number} should not be generated a new {file:Yml} with combo-merge result lvl {result_house:Number} house',
+    'From house lvl {initial_house:Number} should not be generated a new {file:Yml} with combo-merge result lvl {result_house:Number} house',
     extra_types=EXTRA_TYPES),
     target_fixture='result_board')
 def result(file, initial_house, result_house, game_data):

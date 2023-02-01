@@ -7,7 +7,7 @@ from models.pause import Pause
 
 
 @scenario('board.feature', 'User puts the house at used cell')
-def test_destruction_1():
+def test_board_2():
     pass
 
 
@@ -49,8 +49,6 @@ def user_place(file, game_board, spawn_queue):
     user_place = data.get('user_place')
     x, y = user_place
     board = game_board.get('board')
-    spawn_queue = spawn_queue.get('spawn_queue')
-    house = spawn_queue[3]
 
     assert board[x][y] != 0
     return ""

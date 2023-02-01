@@ -11,7 +11,7 @@ Feature: Combo-Merge
     Given Game board with default preset houses board/positive/first/default.yml
     Given User have in board queue [1,1,1,1]
     When User place on board/positive/first/user_place.yml
-    Then From house 1 should be generated a new board/positive/first/result_board.yml with result lvl 3 house
+    Then From house lvl 1 should be generated a new board/positive/first/result_board.yml with combo-merge result lvl 3 house
     Then User gets a crystal
 
 
@@ -20,4 +20,4 @@ Feature: Combo-Merge
     Given Game board with default preset houses board/negative/first/default.yml
     Given User have in board queue [1,1,1,3]
     When User place on board/negative/first/user_place.yml
-    Then From house 3 should not be generated a new board/negative/first/result_board.yml with combo-merge result lvl 4 house
+    Then From house lvl 3 should not be generated a new board/negative/first/result_board.yml with combo-merge result lvl 4 house

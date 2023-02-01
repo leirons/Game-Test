@@ -8,7 +8,7 @@ from models.pause import Pause
 
 
 @scenario('board.feature', 'User puts the house at empty cell')
-def test_destruction_1():
+def test_board_1():
     pass
 
 
