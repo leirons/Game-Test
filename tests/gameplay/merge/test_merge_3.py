@@ -7,8 +7,7 @@ from pytest_bdd import scenario, given, then, when, parsers
 from models.board import Board
 
 
-@scenario('merge.feature', 'Negative test to check the impossibility of merging houses in different '
-                           'parts of the game board')
+@scenario('merge.feature', 'Negative test to check the impossibility of merging houses of different lvl')
 def test_merge_houses():
     pass
 
@@ -72,6 +71,7 @@ def merge_house(change_board, game_board, file,user_queue):
     number_of_houses_before = 0
     board = game_board.get('board')
     user_queue = user_queue.get("user_queue")
+
     for i in board.get_board():
         for j in i:
             if j != 0:
@@ -85,3 +85,4 @@ def merge_house(change_board, game_board, file,user_queue):
     assert board.get_board() == result_board
     assert result_board[x][y] == user_queue[3]
     assert current_number_of_houses == number_of_houses_before
+
