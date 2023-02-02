@@ -1,6 +1,5 @@
 # Created by User at 1.02.2023
 Feature: Combo-Merge
-  Checking the installation of elements from the queue to the board
 
   Background:
     Given The game is in progress
