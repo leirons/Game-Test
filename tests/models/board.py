@@ -1,4 +1,4 @@
-from gameplay.models.house import Houses
+from models.house import Houses
 
 
 class Board:
@@ -29,7 +29,7 @@ class Board:
     def create_custom_board(self, board):
         self.board = board
 
-    def use_crystal(self,coordinates=None):
+    def use_crystal(self, coordinates=None):
         if coordinates:
             return True
         return False
