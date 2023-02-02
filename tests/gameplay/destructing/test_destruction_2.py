@@ -1,12 +1,13 @@
 # content of test_destruction_2.py
 # Negative test
 
-from pytest_bdd import scenario, given, then, when
-from models.board import Board
-from models.pause import Pause
+from pytest_bdd import given, scenario, then, when
+
+from game.models.board import Board
+from game.models.pause import Pause
 
 
-@scenario('destructing.feature', 'Using the destruction function at empty cell')
+@scenario("destructing.feature", "Using the destruction function at empty cell")
 def test_destruction_2():
     pass
 
@@ -14,7 +15,7 @@ def test_destruction_2():
 @given("The game is in progress", target_fixture="game_in_progress")
 def game_in_progress():
     pause = Pause()
-    assert pause.active_pause == True
+    assert pause.active_pause
     return {"game_progress": True}
 
 
@@ -26,7 +27,10 @@ def game_table():
     return board
 
 
-@given("One possibility to use the destruction function", target_fixture="destruction_ability")
+@given(
+    "One possibility to use the destruction function",
+    target_fixture="destruction_ability",
+)
 def destruction_ability():
     return {"destruction": 1}
 

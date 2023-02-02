@@ -1,13 +1,15 @@
 # content of test_destruction_3.py
 # Positive test
 
-from pytest_bdd import scenario, given, then, when
+from pytest_bdd import given, scenario, then
 
-from models.board import Board
-from models.pause import Pause
+from game.models.board import Board
+from game.models.pause import Pause
 
 
-@scenario('destructing.feature', 'Getting the destroy function  after receiving 200 coins')
+@scenario(
+    "destructing.feature", "Getting the destroy function  after receiving 200 coins"
+)
 def test_destruction_3():
     pass
 
@@ -27,19 +29,22 @@ def game_table():
     return board
 
 
-@given("One possibility to use the destruction function", target_fixture="destruction_ability")
+@given(
+    "One possibility to use the destruction function",
+    target_fixture="destruction_ability",
+)
 def destruction_ability():
     return {"destruction": 1}
 
 
 @given("200 coins", target_fixture="coins")
 def coins():
-    return {'coins': 200}
+    return {"coins": 200}
 
 
 @then("User gets one possibility to use the destruction function")
 def get_destruction_ability(coins, destruction_ability):
-    assert coins.get('coins') == 200
+    assert coins.get("coins") == 200
     ability = destruction_ability.get("destruction")
     assert ability == 1
     ability = ability + 1

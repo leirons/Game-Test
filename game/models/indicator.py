@@ -18,19 +18,17 @@ class Indicator:
         previous = houses[0]
         sum_ = 0
         for i in range(1, len(houses)):
-            count = houses[i].get('count')
-            lvl = houses[i].get('lvl')
+            count = houses[i].get("count")
+            lvl = houses[i].get("lvl")
             sum_first = lvl * count
-            sum_second = previous.get('count') * previous.get('lvl')
+            sum_second = previous.get("count") * previous.get("lvl")
             res = sum_first + sum_second
             sum_ = sum_ + res
             previous = houses[i]
         return sum_ * 2
-
 
     def used_crystal(self, n):
         return n + 1
 
     def destroyed_house(self, n):
         return n * 20
-

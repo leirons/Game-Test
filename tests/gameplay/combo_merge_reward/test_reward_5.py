@@ -2,11 +2,12 @@
 # Negative test
 
 
-from pytest_bdd import scenario, given, then, when
-from models.pause import Pause
+from pytest_bdd import given, scenario, then, when
+
+from game.models.pause import Pause
 
 
-@scenario('merge_reward.feature', 'Try to use crystal at spawn place')
+@scenario("merge_reward.feature", "Try to use crystal at spawn place")
 def test_destruction_5():
     pass
 
@@ -14,26 +15,27 @@ def test_destruction_5():
 @given("The game is in progress", target_fixture="game_in_progress")
 def game_in_progress():
     pause = Pause()
-    assert pause.active_pause == True
+    assert pause.active_pause
     return {"game_progress": True}
 
 
 @given("A crystal after combo-merge case", target_fixture="crystal")
 def crystal():
-    return {'crystal': True}
+    return {"crystal": True}
 
 
-
-@when("User drags the crystal to any house at spawn place", target_fixture="drag_crystal")
+@when(
+    "User drags the crystal to any house at spawn place", target_fixture="drag_crystal"
+)
 def drag_crystal():
-    return {'crystal_is_dragged': True}
+    return {"crystal_is_dragged": True}
 
 
 @then("Nothing will happen")
 def increase_lvl(crystal, drag_crystal):
     increased = False
 
-    is_dragged = drag_crystal.get('crystal_is_dragged')
+    is_dragged = drag_crystal.get("crystal_is_dragged")
     crystal = crystal.get("crystal")
 
     assert is_dragged is True

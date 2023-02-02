@@ -2,13 +2,13 @@
 # Positive test
 from random import randrange
 
-from pytest_bdd import scenario, given, then, when
+from pytest_bdd import given, scenario, then, when
 
-from models.board import Board
-from models.pause import Pause
+from game.models.board import Board
+from game.models.pause import Pause
 
 
-@scenario('destructing.feature', 'Using the destruction function at home')
+@scenario("destructing.feature", "Using the destruction function at home")
 def test_destruction_1():
     pass
 
@@ -16,7 +16,7 @@ def test_destruction_1():
 @given("The game is in progress", target_fixture="game_in_progress")
 def game_in_progress():
     pause = Pause()
-    assert pause.active_pause == True
+    assert pause.active_pause
     return {"game_progress": True}
 
 
@@ -28,7 +28,10 @@ def game_table():
     return board
 
 
-@given("One possibility to use the destruction function", target_fixture="destruction_ability")
+@given(
+    "One possibility to use the destruction function",
+    target_fixture="destruction_ability",
+)
 def destruction_ability():
     return {"destruction": 1}
 
@@ -36,7 +39,7 @@ def destruction_ability():
 @when("User destroys a random house", target_fixture="destroyed_house")
 def destroyed_house(game_table):
     board = game_table
-    house = (randrange(1, 10))
+    house = randrange(1, 10)
     board[0] = house
 
     board[0] = 0

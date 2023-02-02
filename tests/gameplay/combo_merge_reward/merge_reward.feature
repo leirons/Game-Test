@@ -36,7 +36,3 @@ Feature: Combo Merge Reward
   Scenario: Try to use crystal at spawn place
     When User drags the crystal to any house at spawn place
     Then Nothing will happen
-
-
-
-

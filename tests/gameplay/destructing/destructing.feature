@@ -52,3 +52,5 @@ Feature: Destructing
     When User try to destroy a house on spawn cell
     Then Nothing will happen
     Then From user wont take one possibility to destruction
+
+  # destruction negative: no coins to use

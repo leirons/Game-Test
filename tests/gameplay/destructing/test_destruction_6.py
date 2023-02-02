@@ -2,12 +2,14 @@
 # Negative test
 
 from random import randrange
-from pytest_bdd import scenario, given, then, when
-from models.board import Board
-from models.pause import Pause
+
+from pytest_bdd import given, scenario, then, when
+
+from game.models.board import Board
+from game.models.pause import Pause
 
 
-@scenario('destructing.feature', 'Using the destruction function at spawn place')
+@scenario("destructing.feature", "Using the destruction function at spawn place")
 def test_destruction_6():
     pass
 
@@ -27,7 +29,10 @@ def game_table():
     return board
 
 
-@given("One possibility to use the destruction function", target_fixture="destruction_ability")
+@given(
+    "One possibility to use the destruction function",
+    target_fixture="destruction_ability",
+)
 def destruction_ability():
     return {"destruction": 1}
 
@@ -43,7 +48,7 @@ def spawn_board():
 
 @when("User try to destroy a house on spawn cell", target_fixture="destroyed_house")
 def destroyed_house(spawn_board):
-    assert len(spawn_board.get('spawn_board')) == 4
+    assert len(spawn_board.get("spawn_board")) == 4
     for i in spawn_board:
         assert i != 0
     return False

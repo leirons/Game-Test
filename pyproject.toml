@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "game"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+license = "Private"
+readme = "README.md"
+packages = [{include = "game"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.2.1"
+pytest-bdd = "^6.1.1"
+pyyaml = "^6.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.0.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
