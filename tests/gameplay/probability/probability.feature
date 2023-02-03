@@ -4,7 +4,7 @@ Feature: Probability
   Checking the probability of a house drop on the game board
 
   Background:
-    Given A tests/fixtures/probabilities/chances/give/default.yml with probability chances
+    Given A probabilities/chances/give/default.yml with probability chances
 
   Scenario Outline: Outlined given, when, then
     Given Game board with max house <lvl>
