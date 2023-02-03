@@ -1,4 +1,4 @@
-# content of test_reward_1.py
+# content of test_board_1.py
 # Positive test
 
 from utils.get_root import get_root

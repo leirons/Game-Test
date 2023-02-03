@@ -1,4 +1,4 @@
-# content of test_reward_1.py
+# content of test_board_2.py
 # Positive test
 
 import yaml
