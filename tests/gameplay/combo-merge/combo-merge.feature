@@ -1,5 +1,6 @@
 # Created by User at 1.02.2023
 Feature: Combo-Merge
+  Checking for merge of a multiple of houses
 
   @positive
   Scenario: Combo-merge function
