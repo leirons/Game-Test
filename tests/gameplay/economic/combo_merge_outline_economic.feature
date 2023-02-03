@@ -1,4 +1,4 @@
-# content of scenario_outlines.feature
+# content of combo_merge_outline_economic.feature
 
 Feature: Combo Merge Outline
 
