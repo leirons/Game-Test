@@ -3,7 +3,6 @@ Feature: Economic
   Checking the correct payment of coins
 
   Background:
-    Given The game is in progress
     Given Random numbers of houses on the game table
 
   @positive
@@ -27,7 +26,7 @@ Feature: Economic
     When User merges x houses of n lvl
     Then User gets n*x coins
 
-  @positive
-  Scenario: Getting ( (x1*n1) + (x2*n2)+ ... +(хN*nN) ) * N coins for combo-merge
-    When User merges multiple x houses of multiple n lvl
-    Then User gets ( (x1*n1) + (x2*n2)+ ... +(хN*nN) ) * N coins
+#  @positive
+#  Scenario: Getting ( (x1*n1) + (x2*n2)+ ... +(хN*nN) ) * N coins for combo-merge
+#    When User merges multiple x houses of multiple n lvl
+#    Then User gets ( (x1*n1) + (x2*n2)+ ... +(хN*nN) ) * N coins

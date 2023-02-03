@@ -1,6 +1,6 @@
 # Created by User at 31.01.2023
 # content of probability.feature
-Feature: Scenario outlines
+Feature: Probability
 
 
   Background:

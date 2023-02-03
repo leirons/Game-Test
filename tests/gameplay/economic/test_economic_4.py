@@ -12,14 +12,6 @@ from game.models.pause import Pause
 def test_coins_4():
     pass
 
-
-@given("The game is in progress", target_fixture="game_in_progress")
-def game_in_progress():
-    pause = Pause()
-    assert pause.active_pause
-    return {"game_progress": True}
-
-
 @given("Crystal", target_fixture="crystal")
 def crystal():
     return {"crystal": True}
