@@ -20,11 +20,10 @@ EXTRA_TYPES = {
     parsers.cfparse("A {file:Yml} with probability chances", extra_types=EXTRA_TYPES),
     target_fixture="probability_chances",
 )
-def probability_chances(file):
+def probability_chances(file,load_fixture_data):
     path = get_root(file)
-    with open(path) as stream:
-        data = yaml.safe_load(stream)
-        return data
+    data = load_fixture_data(path)
+    return data
 
 
 @given(parsers.parse("Game board with max house {lvl:d}"), target_fixture="lvl")

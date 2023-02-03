@@ -13,7 +13,6 @@ def test_combo_merge_1():
 
 
 EXTRA_TYPES = {
-    "result_house": int,
     "initial_house": int,
     "Yml": str,
     "List": str,
@@ -28,12 +27,10 @@ EXTRA_TYPES = {
     ),
     target_fixture="game_board",
 )
-def game_board(file):
+def game_board(file,load_fixture_data):
     path = get_root(file)
-    with open(path) as stream:
-        data = yaml.safe_load(stream)
-        return data
-
+    data = load_fixture_data(path)
+    return data
 
 @given(
     parsers.cfparse("User have in board queue {data:List}", extra_types=EXTRA_TYPES),
@@ -74,11 +71,9 @@ def user_place(data, game_board, spawn_queue):
     ),
     target_fixture="result_board",
 )
-def result(file, initial_house, result_house, game_data):
+def result(file, initial_house, result_house, game_data,load_fixture_data):
     path = get_root(file)
-    with open(path) as stream:
-        data = yaml.safe_load(stream)
-
+    data = load_fixture_data(path)
 
     result_board = data.get("board")
     house = game_data[2]

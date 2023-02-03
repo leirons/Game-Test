@@ -21,12 +21,10 @@ EXTRA_TYPES = {"Yml": str, "List": str}
     ),
     target_fixture="game_board",
 )
-def game_board(file):
+def game_board(file,load_fixture_data):
     path = get_root(file)
-    with open(path) as stream:
-        data = yaml.safe_load(stream)
-        return data
-
+    data = load_fixture_data(path)
+    return data
 
 @given(
     parsers.cfparse("User have in board queue {data:List}", extra_types=EXTRA_TYPES),

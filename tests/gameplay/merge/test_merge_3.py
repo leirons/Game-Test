@@ -4,8 +4,8 @@
 import yaml
 from pytest_bdd import given, parsers, scenario, then, when
 
-from game.models.board import Board
 from utils.get_root import get_root
+
 
 
 @scenario(
@@ -33,10 +33,9 @@ CONVERTERS = {
     ),
     target_fixture="game_board",
 )
-def game_in_progress(file):
+def game_in_progress(file,load_fixture_data):
     path = get_root(file)
-    with open(path) as stream:
-        data = yaml.safe_load(stream)
+    data = load_fixture_data(path)
     initial_board = data.get("board")
 
     return {"initial_board": initial_board}
@@ -75,10 +74,9 @@ def user_place(data, game_board, user_queue):
         extra_types=EXTRA_TYPES,
     )
 )
-def merge_house(change_board, game_board, file, user_queue):
+def merge_house(change_board, game_board, file, user_queue,load_fixture_data):
     path = get_root(file)
-    with open(path) as stream:
-        data = yaml.safe_load(stream)
+    data = load_fixture_data(path)
 
     x, y = change_board
     result_board = data.get("board")

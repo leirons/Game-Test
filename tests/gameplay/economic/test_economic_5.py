@@ -19,7 +19,7 @@ EXTRA_TYPES = {
     "String": str
 }
 
-scenarios("scenario_outlines.feature")
+scenarios("combo_merge_outline_economic.feature")
 
 
 @given("Random numbers of houses on the game table", target_fixture="game_table")

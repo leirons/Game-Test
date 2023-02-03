@@ -19,11 +19,11 @@ Feature: Destructing
     Then From user wont take one possibility to destruction
 
   @positive
-  Scenario: Getting the destroy function  after receiving 200 coins
+  Scenario: Getting the destroy function  after receiving coins
     Given Random numbers of houses on the game table
     Given One possibility to use the destruction function
-    Given 200 coins
-    Then User gets one possibility to use the destruction function
+    Given User gets 200 coins
+    Then User gets possibility to use the destruction function
 
 
   @positive

@@ -1,8 +1,8 @@
 # content of scenario_outlines.feature
 
-Feature: Scenario outlines
+Feature: Combo Merge Outline
 
-  Scenario Outline: Outlined given, when, then
+  Scenario Outline: Getting ( (x1*n1) + (x2*n2)+ ... +(хN*nN) ) * N coins for combo-merge
     Given Random numbers of houses on the game table
     Given Gets <data> for combo-merging
     Then User gets <n> coins
