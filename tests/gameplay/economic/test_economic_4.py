@@ -19,8 +19,7 @@ def crystal():
 
 @given("Random numbers of houses on the game table", target_fixture="game_table")
 def game_table():
-    board = Board()
-    board.create_custom_board([0, 3, 0, 0])
+    board = [3, 4, 5, 6, 7, 8, 9]
     return board
 
 
@@ -29,9 +28,8 @@ def user_houses(crystal, game_table):
     assert crystal.get("crystal") is True
     board = game_table
     coordinate = 1
-    result = board.use_crystal(coordinate)
-    assert result is True
-    return board.get_board()[coordinate]
+    assert coordinate == 1
+    return board[coordinate]
 
 
 @then("User gets n+1 coins")

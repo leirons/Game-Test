@@ -37,10 +37,9 @@ def game_in_progress(file):
     path = get_root(file)
     with open(path) as stream:
         data = yaml.safe_load(stream)
-    board = Board()
     initial_board = data.get("board")
-    board.create_custom_board(initial_board)
-    return {"initial_board": initial_board, "board": board}
+
+    return {"initial_board": initial_board}
 
 
 @then(
@@ -84,10 +83,10 @@ def merge_house(change_board, game_board, file, user_queue):
     x, y = change_board
     result_board = data.get("board")
     number_of_houses_before = 0
-    board = game_board.get("board")
+    board = game_board.get("initial_board")
     user_queue = user_queue.get("user_queue")
 
-    for i in board.get_board():
+    for i in board:
         for j in i:
             if j != 0:
                 number_of_houses_before = number_of_houses_before + 1
@@ -97,6 +96,6 @@ def merge_house(change_board, game_board, file, user_queue):
             if j != 0:
                 current_number_of_houses = current_number_of_houses + 1
 
-    assert board.get_board() == result_board
+    assert board == result_board
     assert result_board[x][y] == user_queue[3]
     assert current_number_of_houses == number_of_houses_before

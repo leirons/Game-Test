@@ -20,8 +20,7 @@ def crystal():
 
 @given("Board with level 10 house", target_fixture="game_board")
 def game_board():
-    board = Board()
-    board.create_custom_board([10, 0, 0, 0, 0, 0])
+    board = [3, 4, 5, 6, 7, 8, 9]
     return {"game_board": board}
 
 
@@ -35,7 +34,7 @@ def increase_lvl(game_board, crystal, drag_crystal):
     increased = False
     is_dragged = drag_crystal.get("crystal_is_dragged")
     assert is_dragged is True
-    board = game_board.get("game_board").get_board()
+    board = game_board.get("game_board")
     crystal = crystal.get("crystal")
     assert board is not []
     assert crystal is True

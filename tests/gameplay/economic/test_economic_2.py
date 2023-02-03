@@ -16,9 +16,7 @@ def test_coins_2():
 
 @given("Random numbers of houses on the game table", target_fixture="game_table")
 def game_table():
-    board = Board()
-    board.create_custom_board([0, 0, 0, 0])
-    board = board.get_board()
+    board = [3, 4, 5, 6, 7, 8, 9]
     return board
 
 

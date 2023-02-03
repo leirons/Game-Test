@@ -2,8 +2,6 @@
 Feature: Combo Merge Reward
   Testing getting reward after combo merge
 
-
-
   @positive
   Scenario: Increase house level by +1 with crystal
     Given A crystal after combo-merge case

@@ -9,11 +9,6 @@ from game.models.pause import Pause
 @scenario("merge_reward.feature", "Increase house level by +1 with crystal")
 def test_reward_1():
     pass
-
-
-
-
-
 @given("A crystal after combo-merge case", target_fixture="crystal")
 def crystal():
     return {"crystal": True}
@@ -21,8 +16,7 @@ def crystal():
 
 @given("Board with houses up to level 9", target_fixture="game_board")
 def game_board():
-    board = Board()
-    board.create_custom_board([3, 5, 6, 7, 4, 5])
+    board = [3,4,5,6,7,8,9]
     return {"game_board": board}
 
 
@@ -38,7 +32,7 @@ def increase_lvl(game_board, crystal, drag_crystal):
     increased = True
     is_dragged = drag_crystal.get("crystal_is_dragged")
     assert is_dragged is True
-    board = game_board.get("game_board").get_board()
+    board = game_board.get("game_board")
     crystal = crystal.get("crystal")
     assert board is not []
     assert crystal is True

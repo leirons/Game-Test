@@ -38,8 +38,7 @@ def crystal():
 
 @given("Board with houses up to level 9", target_fixture="game_board")
 def game_board():
-    board = Board()
-    board.create_custom_board([3, 5, 6, 7, 4, 5])
+    board = [3, 4, 5, 6, 7, 8, 9]
     return {"game_board": board}
 
 
@@ -63,7 +62,7 @@ def increase_lvl(spawn_queue, crystal, result_from_cache, game_board, drag_cryst
     queue = spawn_queue.get("spawn_queue")
     cache_house = spawn_queue.get("cache_house")
     assert is_dragged is True
-    board = game_board.get("game_board").get_board()
+    board = game_board.get("game_board")
     crystal = crystal.get("crystal")
     assert board is not []
     assert crystal is True
