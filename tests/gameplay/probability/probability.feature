@@ -1,7 +1,7 @@
 # Created by User at 31.01.2023
 # content of probability.feature
 Feature: Probability
-
+  Checking the probability of a house drop on the game board
 
   Background:
     Given A tests/fixtures/probabilities/chances/give/default.yml with probability chances
