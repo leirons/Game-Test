@@ -51,5 +51,6 @@ def putting_house_on_another_position(game_board,get_house):
 
 @then("Nothing will happen")
 def result(game_board):
+    """Not implemented"""
     pass
 

@@ -43,4 +43,5 @@ def increase_lvl(crystal, try_to_use_crystal, game_table):
 
 @then("Nothing will happen")
 def result(game_table):
+    """Not implemented"""
     pass

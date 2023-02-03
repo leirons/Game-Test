@@ -56,4 +56,5 @@ def user_place(data, game_board, spawn_queue):
 
 @then("Nothing will happen")
 def result(game_data):
+    """Not implemented"""
     pass
