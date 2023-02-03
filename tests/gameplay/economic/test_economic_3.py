@@ -1,13 +1,15 @@
 # Positive
 # content of test_economic_3.py
 
-from pytest_bdd import scenario, given, then, when
-from tests.models.indicator import Indicator
-from tests.models.pause import Pause
 from random import randrange
 
+from pytest_bdd import given, scenario, then, when
 
-@scenario('economic.feature', 'Getting n*x coins for merging x houses of n lvl')
+from game.models.indicator import Indicator
+from game.models.pause import Pause
+
+
+@scenario("economic.feature", "Getting n*x coins for merging x houses of n lvl")
 def test_coins_3():
     pass
 
@@ -15,7 +17,7 @@ def test_coins_3():
 @given("The game is in progress", target_fixture="game_in_progress")
 def game_in_progress():
     pause = Pause()
-    assert pause.active_pause == True
+    assert pause.active_pause
     return {"game_progress": True}
 
 

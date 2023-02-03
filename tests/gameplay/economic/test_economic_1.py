@@ -2,14 +2,16 @@
 # content of test_economic_1.py
 
 
-from pytest_bdd import scenario, given, then, when
-from tests.models.board import Board
-from tests.models.indicator import Indicator
-from tests.models.pause import Pause
 from random import randrange
 
+from pytest_bdd import given, scenario, then, when
 
-@scenario('economic.feature', 'Getting n coins for placing a house')
+from game.models.board import Board
+from game.models.indicator import Indicator
+from game.models.pause import Pause
+
+
+@scenario("economic.feature", "Getting n coins for placing a house")
 def test_coins_1():
     pass
 
@@ -17,7 +19,7 @@ def test_coins_1():
 @given("The game is in progress", target_fixture="game_in_progress")
 def game_in_progress():
     pause = Pause()
-    assert pause.active_pause == True
+    assert pause.active_pause
     return {"game_progress": True}
 
 
@@ -32,7 +34,7 @@ def game_table():
 @when("User puts the house of random lvl on cell", target_fixture="user_house")
 def user_houses(game_table):
     board = game_table
-    house = (randrange(1, 10))
+    house = randrange(1, 10)
     board[0] = house
     return house
 

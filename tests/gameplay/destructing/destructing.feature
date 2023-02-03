@@ -3,7 +3,6 @@ Feature: Destructing
 
   @positive
   Scenario: Using the destruction function at home
-    Given The game is in progress
     Given Random numbers of houses on the game table
     Given One possibility to use the destruction function
     When User destroys a random house
@@ -12,7 +11,6 @@ Feature: Destructing
 
   @negative
   Scenario: Using the destruction function at empty cell
-    Given The game is in progress
     Given Random numbers of houses on the game table
     Given One possibility to use the destruction function
     When User try to destroy an empty cell
@@ -21,7 +19,6 @@ Feature: Destructing
 
   @positive
   Scenario: Getting the destroy function  after receiving 200 coins
-    Given The game is in progress
     Given Random numbers of houses on the game table
     Given One possibility to use the destruction function
     Given 200 coins
@@ -30,7 +27,6 @@ Feature: Destructing
 
   @positive
   Scenario: Canceling the destroy function after clicking on it
-    Given The game is in progress
     Given Random numbers of houses on the game table
     Given One possibility to use the destruction function
     When User clicks on destroy button
@@ -45,10 +41,17 @@ Feature: Destructing
 
   @negative
   Scenario: Using the destruction function at spawn place
-    Given The game is in progress
     Given Random numbers of houses on the game table
     Given One possibility to use the destruction function
     Given Spawn board with random lvl of houses
     When User try to destroy a house on spawn cell
     Then Nothing will happen
     Then From user wont take one possibility to destruction
+
+  @positive
+  Scenario: Trying to destroy a house with 0 coins and no destruction function
+    Given Random numbers of houses on the game table
+    When User tries to destroy a random house
+    Then Nothing will happen
+
+  # destruction negative: no coins to use
