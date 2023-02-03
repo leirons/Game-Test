@@ -1,5 +1,6 @@
 # Created by User at 30.01.2023
 Feature: Destructing
+  Checking the interaction of the destruction function with the board
 
   @positive
   Scenario: Using the destruction function at home
@@ -54,4 +55,3 @@ Feature: Destructing
     When User tries to destroy a random house
     Then Nothing will happen
 
-  # destruction negative: no coins to use
