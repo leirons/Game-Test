@@ -29,8 +29,6 @@ def spawn_queue(data, number):
     return {"spawn_queue": data, "cache_house": number}
 
 
-
-
 @given("A crystal after combo-merge case", target_fixture="crystal")
 def crystal():
     return {"crystal": True}
