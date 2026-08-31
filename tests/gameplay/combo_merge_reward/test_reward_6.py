@@ -5,7 +5,10 @@
 from pytest_bdd import given, scenario, then, when
 
 
-@scenario("merge_reward.feature", "The user is trying to place the crystal that does not exists in queue")
+@scenario(
+    "merge_reward.feature",
+    "The user is trying to place the crystal that does not exists in queue",
+)
 def test_reward_6():
     pass
 
@@ -20,7 +23,7 @@ def game_table():
     return [1, 2, 3, 4, 5, 6]
 
 
-@given('Сrystal in the state of selecting an object to use', target_fixture="crystal")
+@given("Сrystal in the state of selecting an object to use", target_fixture="crystal")
 def crystal():
     return "crystal"
 

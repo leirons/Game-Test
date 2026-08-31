@@ -2,11 +2,12 @@
 # Positive test
 
 
-from pytest_bdd import given, scenario, then,when
+from pytest_bdd import given, scenario, then, when
 
 
 @scenario(
-    "board.feature", "The user is trying to change the position of the already placed house"
+    "board.feature",
+    "The user is trying to change the position of the already placed house",
 )
 def test_board_4():
     pass
