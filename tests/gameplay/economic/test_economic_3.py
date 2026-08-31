@@ -13,6 +13,7 @@ from game.models.pause import Pause
 def test_coins_3():
     pass
 
+
 @given("Random numbers of houses on the game table", target_fixture="game_table")
 def game_table():
     return "board"

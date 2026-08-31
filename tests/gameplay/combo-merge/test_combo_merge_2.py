@@ -2,9 +2,9 @@
 # Negative test
 
 import yaml
+from conftest import load_fixture_data
 from pytest_bdd import given, parsers, scenario, then, when
 
-from conftest import load_fixture_data
 from utils.get_root import get_root
 
 
@@ -24,14 +24,13 @@ EXTRA_TYPES = {
 }
 
 
-
 @given(
     parsers.cfparse(
         "Game board with default preset houses {file:Yml}", extra_types=EXTRA_TYPES
     ),
     target_fixture="game_board",
 )
-def game_board(file,load_fixture_data):
+def game_board(file, load_fixture_data):
     path = get_root(file)
     data = load_fixture_data(path)
     return data
@@ -76,10 +75,9 @@ def user_place(data, game_board, spawn_queue):
     ),
     target_fixture="result_board",
 )
-def result(file, initial_house, result_house, game_data,load_fixture_data):
+def result(file, initial_house, result_house, game_data, load_fixture_data):
     path = get_root(file)
     data = load_fixture_data(path)
-
 
     result_board = data.get("board")
     house = game_data[2]
