@@ -4,6 +4,7 @@
 
 from pytest_bdd import given, scenario, then, when
 
+
 @scenario("merge_reward.feature", "Try to use crystal at spawn place")
 def test_reward_5():
     pass

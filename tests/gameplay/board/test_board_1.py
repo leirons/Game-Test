@@ -1,10 +1,10 @@
 # content of test_board_1.py
 # Positive test
 
-from utils.get_root import get_root
-
 import yaml
 from pytest_bdd import given, parsers, scenario, then, when
+
+from utils.get_root import get_root
 
 
 @scenario("board.feature", "User puts the house at empty cell")
@@ -15,18 +15,18 @@ def test_board_1():
 EXTRA_TYPES = {"Yml": str, "List": str}
 
 
-
 @given(
     parsers.cfparse(
         "Game board with default preset houses {file:Yml}", extra_types=EXTRA_TYPES
     ),
     target_fixture="game_board",
 )
-def game_board(file,load_fixture_data):
+def game_board(file, load_fixture_data):
 
     path = get_root(file)
     data = load_fixture_data(path)
     return data
+
 
 @given(
     parsers.cfparse("User have in board queue {data:List}", extra_types=EXTRA_TYPES),
@@ -65,7 +65,7 @@ def user_place(data, game_board, spawn_queue):
     ),
     target_fixture="result_board",
 )
-def result(file, game_data,load_fixture_data):
+def result(file, game_data, load_fixture_data):
     path = get_root(file)
     data = load_fixture_data(path)
 
