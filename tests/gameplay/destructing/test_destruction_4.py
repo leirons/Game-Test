@@ -4,7 +4,6 @@
 from pytest_bdd import given, scenario, then, when
 
 
-
 @scenario("destructing.feature", "Canceling the destroy function after clicking on it")
 def test_destruction_4():
     pass

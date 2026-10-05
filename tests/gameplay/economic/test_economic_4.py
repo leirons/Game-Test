@@ -12,6 +12,7 @@ from game.models.pause import Pause
 def test_coins_4():
     pass
 
+
 @given("Crystal", target_fixture="crystal")
 def crystal():
     return {"crystal": True}
