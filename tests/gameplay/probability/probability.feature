@@ -23,5 +23,3 @@ Feature: Probability
       | 8   |
       | 9   |
       | 10  |
-
-

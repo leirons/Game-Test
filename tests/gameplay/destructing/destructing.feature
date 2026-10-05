@@ -54,4 +54,3 @@ Feature: Destructing
     Given Random numbers of houses on the game table
     When User tries to destroy a random house
     Then Nothing will happen
-

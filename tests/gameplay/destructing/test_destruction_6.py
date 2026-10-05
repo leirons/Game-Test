@@ -6,16 +6,14 @@ from random import randrange
 from pytest_bdd import given, scenario, then, when
 
 
-
 @scenario("destructing.feature", "Using the destruction function at spawn place")
 def test_destruction_6():
     pass
 
 
-
 @given("Random numbers of houses on the game table", target_fixture="game_table")
 def game_table():
-    board = [0,0,0,0,0]
+    board = [0, 0, 0, 0, 0]
     return board
 
 

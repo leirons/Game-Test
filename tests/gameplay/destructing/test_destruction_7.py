@@ -5,7 +5,10 @@
 from pytest_bdd import given, scenario, then, when
 
 
-@scenario("destructing.feature", "Trying to destroy a house with 0 coins and no destruction function")
+@scenario(
+    "destructing.feature",
+    "Trying to destroy a house with 0 coins and no destruction function",
+)
 def test_destruction_7():
     pass
 
