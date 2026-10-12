@@ -7,7 +7,6 @@ from pytest_bdd import given, parsers, scenario, then, when
 from utils.get_root import get_root
 
 
-
 @scenario(
     "merge.feature",
     "Negative test to check the impossibility of merging houses of different lvl",
@@ -33,7 +32,7 @@ CONVERTERS = {
     ),
     target_fixture="game_board",
 )
-def game_in_progress(file,load_fixture_data):
+def game_in_progress(file, load_fixture_data):
     path = get_root(file)
     data = load_fixture_data(path)
     initial_board = data.get("board")
@@ -74,7 +73,7 @@ def user_place(data, game_board, user_queue):
         extra_types=EXTRA_TYPES,
     )
 )
-def merge_house(change_board, game_board, file, user_queue,load_fixture_data):
+def merge_house(change_board, game_board, file, user_queue, load_fixture_data):
     path = get_root(file)
     data = load_fixture_data(path)
 

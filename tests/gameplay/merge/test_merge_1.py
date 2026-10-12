@@ -29,7 +29,7 @@ CONVERTERS = {
     ),
     target_fixture="game_board",
 )
-def game_in_progress(file,load_fixture_data):
+def game_in_progress(file, load_fixture_data):
     path = get_root(file)
     data = load_fixture_data(path)
 
@@ -69,7 +69,7 @@ def user_place(data, game_board, user_queue):
         extra_types=EXTRA_TYPES,
     )
 )
-def merge_house(change_board, game_board, file, user_queue,load_fixture_data):
+def merge_house(change_board, game_board, file, user_queue, load_fixture_data):
     path = get_root(file)
     data = load_fixture_data(path)
 
@@ -79,4 +79,4 @@ def merge_house(change_board, game_board, file, user_queue,load_fixture_data):
     assert result_board[x][y] != 0
     house_result = result_board[x][y]
     initial_house = board[x][y]
-    assert initial_house == house_result-1
+    assert initial_house == house_result - 1
