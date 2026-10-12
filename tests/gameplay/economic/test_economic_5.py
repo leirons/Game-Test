@@ -2,7 +2,7 @@
 # content of test_merge_4.py
 import json
 
-from pytest_bdd import given, scenario, then, when, scenarios, parsers
+from pytest_bdd import given, parsers, scenario, scenarios, then, when
 
 from game.models.indicator import Indicator
 
@@ -15,9 +15,7 @@ from game.models.indicator import Indicator
 #     "result": 22,
 # }
 
-EXTRA_TYPES = {
-    "String": str
-}
+EXTRA_TYPES = {"String": str}
 
 scenarios("combo_merge_outline_economic.feature")
 

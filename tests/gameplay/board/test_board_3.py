@@ -4,13 +4,12 @@
 
 from pytest_bdd import given, scenario, then
 
+
 @scenario(
     "board.feature", "Checking the end of the game after the entire game board is full"
 )
 def test_board_3():
     pass
-
-
 
 
 @given(
