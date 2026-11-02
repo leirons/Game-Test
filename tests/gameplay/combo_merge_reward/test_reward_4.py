@@ -12,7 +12,6 @@ def test_reward_4():
     pass
 
 
-
 @given("A crystal after combo-merge case", target_fixture="crystal")
 def crystal():
     return {"crystal": True}
