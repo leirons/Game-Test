@@ -4,23 +4,20 @@
 import random
 
 import yaml
-from pytest_bdd import given, parsers,then, when, scenarios
+from pytest_bdd import given, parsers, scenarios, then, when
 
 from utils.get_root import get_root
 
 scenarios("probability.feature")
 
-EXTRA_TYPES = {
-    "Yml": str,
-    "d": int
-}
+EXTRA_TYPES = {"Yml": str, "d": int}
 
 
 @given(
     parsers.cfparse("A {file:Yml} with probability chances", extra_types=EXTRA_TYPES),
     target_fixture="probability_chances",
 )
-def probability_chances(file,load_fixture_data):
+def probability_chances(file, load_fixture_data):
     path = get_root(file)
     data = load_fixture_data(path)
     return data
