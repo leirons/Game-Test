@@ -1,12 +1,10 @@
 # content of test_destruction_3.py
 # Positive test
 
-from pytest_bdd import given, scenario, then, parsers
+from pytest_bdd import given, parsers, scenario, then
 
 
-@scenario(
-    "destructing.feature", "Getting the destroy function  after receiving coins"
-)
+@scenario("destructing.feature", "Getting the destroy function  after receiving coins")
 def test_destruction_3():
     pass
 
@@ -27,12 +25,12 @@ def destruction_ability():
 
 @given(parsers.parse("User gets {coins:d} coins"), target_fixture="coins")
 def coins(coins):
-    return {"coins":coins}
+    return {"coins": coins}
 
 
 @then("User gets possibility to use the destruction function")
 def get_destruction_ability(coins, destruction_ability):
-    coins = coins.get('coins')
+    coins = coins.get("coins")
     assert coins is not 0
     ability = destruction_ability.get("destruction")
     while coins >= 200:
